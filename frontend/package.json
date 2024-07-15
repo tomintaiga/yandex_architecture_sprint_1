@@ -7,7 +7,9 @@
     "legacy:build": "webpack --config webpack.config.js --stats=minimal",
     "serve": "serve dist -p 3000",
     "start": "concurrently \"npm run serve\" \"cd microfrontend/m_api && npm run serve\" \"cd microfrontend/m_auth && npm run serve\" \"cd microfrontend/m_list && npm run serve\" \"cd microfrontend/m_popup && npm run serve\" \"cd microfrontend/m_register && npm run serve\"",
-    "legacy:start": "concurrently \"npm run legacy:build\" \"npm run serve\""
+    "legacy:start": "concurrently \"npm run legacy:build\" \"npm run serve\"",
+    "test:microfrontend": "npx jest ./index.spec.js",
+    "test": "npm test"
   },
   "dependencies": {
     "react": "17.0.2",
