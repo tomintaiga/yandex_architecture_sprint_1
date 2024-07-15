@@ -33,7 +33,29 @@
     "react-singleton-context": "^1.0.5",
     "serve": "14.2.3",
     "webpack": "5.92.1",
-    "webpack-cli": "5.1.4"
+    "webpack-cli": "5.1.4",
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.14.9",
+    "dotenv": "^16.0.2",
+    "wait-port": "^1.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "description": ""
 }
