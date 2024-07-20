@@ -10,7 +10,7 @@ import EditProfilePopup from "m_popup/EditProfilePopup";
 import EditAvatarPopup from "m_popup/EditAvatarPopup";
 import AddPlacePopup from "m_popup/AddPlacePopup";
 import Register from "m_register/Register";
-import Login from "m_register/Login";
+import Login from "login/Login";
 import InfoTooltip from "m_popup/InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
 import api from "api";

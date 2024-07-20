@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "concurrently \"rspack build --config rspack.config.js\" \"cd lib/api && rspack build\" \"cd lib/auth && rspack build\" \"cd microfrontend/m_list && rspack build --config rspack.config.js\" \"cd microfrontend/m_popup && rspack build --config rspack.config.js\" \"cd microfrontend/m_register && rspack build\"",
+    "build": "concurrently \"rspack build --config rspack.config.js\" \"cd lib/api && npm run build\" \"cd lib/auth && npm run build\" \"cd microfrontend/m_list && rspack build --config rspack.config.js\" \"cd microfrontend/m_popup && rspack build --config rspack.config.js\" \"cd microfrontend/m_register && rspack build\" \"cd microfrontend/login && npm run build\" ",
     "legacy:build": "webpack --config webpack.config.js --stats=minimal",
     "serve": "serve dist -p 3000",
-    "start": "concurrently \"npm run serve\" \"cd microfrontend/m_list && npm run serve\" \"cd microfrontend/m_popup && npm run serve\" \"cd microfrontend/m_register && npm run serve\"",
+    "start": "concurrently \"npm run serve\" \"cd microfrontend/m_list && npm run serve\" \"cd microfrontend/m_popup && npm run serve\" \"cd microfrontend/m_register && npm run serve\" \"cd microfrontend/login && npm run serve\"",
     "legacy:start": "concurrently \"npm run legacy:build\" \"npm run serve\"",
     "test:microfrontend": "npx jest ./index.spec.js",
     "test": "npm test"
