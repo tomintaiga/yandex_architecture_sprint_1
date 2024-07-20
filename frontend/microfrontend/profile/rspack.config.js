@@ -1,16 +1,14 @@
-const { ModuleFederationPlugin } = require('@module-federation/enhanced');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {
+  container: { ModuleFederationPlugin },
+} = require('@rspack/core');
 const path = require('path');
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
   devtool: 'hidden-source-map',
   output: {
-    publicPath: 'http://localhost:3000/',
+    publicPath: 'http://localhost:3034/',
     clean: true,
-  },
-  resolve: {
-    extensions: ['.jsx', '.js', '.json', '.css', '.scss', '.jpg', 'jpeg', 'png'],
   },
   devServer: {
     headers: {
@@ -19,33 +17,46 @@ module.exports = {
       "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
     },
   },
-  cache: false,
   module: {
     rules: [
       {
         test: /\.(jpg|png|gif|jpeg|svg|json)$/,
-        loader: 'url-loader',
+        type: 'asset/resource',
       },
       {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: ['@babel/preset-react'],
+        test: /\.(js|jsx)$/,
+        use: {
+          loader: 'builtin:swc-loader',
+          options: {
+            jsc: {
+              parser: {
+                syntax: 'ecmascript',
+                jsx: true,
+              },
+              transform: {
+                react: {
+                  runtime: 'automatic',
+                },
+              },
+            },
+          },
         },
       },
     ],
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'main_app',
+      name: 'profile',
       filename: 'remoteEntry.js',
       remotes: {
-        'm_list': 'm_lib@http://localhost:3013/remoteEntry.js',
-        'm_register': 'm_register@http://localhost:3014/remoteEntry.js',
+        'm_main': 'm_main@http://localhost:3000/remoteEntry.js',
       },
       exposes: {
-        './CurrentUserContext': './src/contexts/CurrentUserContext.js',
+        './Profile': './src/components/Profile.js',
+        "./EditAvatarPopup": "./src/components/EditAvatarPopup.js",
+        "./EditProfilePopup": "./src/components/EditProfilePopup.js",
+        "./EditAvatarPopupContext": "./src/contexts/EditAvatarPopupContext.js",
+        "./EditProfilePopupContext": "./src/contexts/EditProfilePopupContext.js",
       },
       shared: {
         react: {
@@ -65,11 +76,6 @@ module.exports = {
           eager: true
         },
       },
-    }),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: "./public/favicon.ico",
-      manifest: "./public/manifest.json",
     }),
   ],
 };

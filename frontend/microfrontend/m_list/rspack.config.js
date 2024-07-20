@@ -50,6 +50,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         'm_main': 'm_main@http://localhost:3000/remoteEntry.js',
+        "profile": "profile@http://localhost:3034/remoteEntry.js",
       },
       exposes: {
         './Card': './src/components/Card.js',
