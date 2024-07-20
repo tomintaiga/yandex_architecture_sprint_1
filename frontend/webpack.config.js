@@ -41,9 +41,6 @@ module.exports = {
       name: 'main_app',
       filename: 'remoteEntry.js',
       remotes: {
-        'm_api': 'm_api@http://localhost:3010/remoteEntry.js',
-        'm_lib': 'm_lib@http://localhost:3011/remoteEntry.js',
-        'm_auth': 'm_lib@http://localhost:3012/remoteEntry.js',
         'm_list': 'm_lib@http://localhost:3013/remoteEntry.js',
         'm_register': 'm_register@http://localhost:3014/remoteEntry.js',
       },

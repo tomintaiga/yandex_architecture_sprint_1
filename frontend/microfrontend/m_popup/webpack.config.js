@@ -41,7 +41,6 @@ module.exports = {
       name: 'm_popup',
       filename: 'remoteEntry.js',
       remotes: {
-        // 'm_lib': 'm_lib@http://localhost:3011/remoteEntry.js',
         'm_main': 'm_main@http://localhost:3000/remoteEntry.js',
       },
       exposes: {

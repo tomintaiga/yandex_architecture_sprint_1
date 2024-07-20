@@ -49,7 +49,6 @@ module.exports = {
       name: 'm_register',
       filename: 'remoteEntry.js',
       remotes: {
-        'm_lib': 'm_lib@http://localhost:3011/remoteEntry.js',
       },
       exposes: {
         './Login': './src/components/Login.js',
