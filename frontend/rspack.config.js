@@ -51,8 +51,8 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         "login": "login@http://localhost:3031/remoteEntry.js",
+        "register": "register@http://localhost:3032/remoteEntry.js",
         'm_list': 'm_list@http://localhost:3013/remoteEntry.js',
-        'm_register': 'm_register@http://localhost:3014/remoteEntry.js',
         'm_popup': 'm_popup@http://localhost:3015/remoteEntry.js',
       },
       exposes: {

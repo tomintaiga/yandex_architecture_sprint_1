@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../index.css";
+import "../blocks/auth-form/auth-form.css";
 
 function Register ({ onRegister }){
   const [email, setEmail] = React.useState('');

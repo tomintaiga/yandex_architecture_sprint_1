@@ -7,7 +7,7 @@ module.exports = {
   mode: 'development',
   devtool: 'hidden-source-map',
   output: {
-    publicPath: 'http://localhost:3014/',
+    publicPath: 'http://localhost:3032/',
     clean: true,
   },
   devServer: {
@@ -46,12 +46,11 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'm_register',
+      name: 'register',
       filename: 'remoteEntry.js',
       remotes: {
       },
       exposes: {
-        './Login': './src/components/Login.js',
         './Register': './src/components/Register.js',
       },
       shared: {
