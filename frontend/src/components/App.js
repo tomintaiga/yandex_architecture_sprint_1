@@ -11,7 +11,7 @@ import EditAvatarPopup from "profile/EditAvatarPopup";
 import AddPlacePopup from "m_popup/AddPlacePopup";
 import Register from "register/Register";
 import Login from "login/Login";
-import InfoTooltip from "m_popup/InfoTooltip";
+import InfoTooltip from "./InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
 import api from "api";
 import * as auth from "auth";
@@ -19,7 +19,7 @@ import { AddPlacePopupContext } from "m_popup/AddPlacePopupContext";
 import { EditAvatarPopupContext } from "profile/EditAvatarPopupContext";
 import { EditProfilePopupContext } from "profile/EditProfilePopupContext";
 import { ImagePopupContext } from "m_popup/ImagePopupContext";
-import { InfoTooltipContext } from "m_popup/InfoTooltipContext";
+import { InfoTooltipContext } from "../contexts/InfoTooltipContext";
 
 
 function App() {
