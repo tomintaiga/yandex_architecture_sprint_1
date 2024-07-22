@@ -53,13 +53,9 @@ module.exports = {
       },
       exposes: {
         "./AddPlacePopup": "./src/components/AddPlacePopup.js",
-        "./EditAvatarPopup": "./src/components/EditAvatarPopup.js",
-        "./EditProfilePopup": "./src/components/EditProfilePopup.js",
         "./ImagePopup": "./src/components/ImagePopup.js",
         "./InfoTooltip": "./src/components/InfoTooltip.js",
         "./AddPlacePopupContext": "./src/contexts/AddPlacePopupContext.js",
-        "./EditAvatarPopupContext": "./src/contexts/EditAvatarPopupContext.js",
-        "./EditProfilePopupContext": "./src/contexts/EditProfilePopupContext.js",
         "./ImagePopupContext": "./src/contexts/ImagePopupContext.js",
         "./InfoTooltipContext": "./src/contexts/InfoTooltipContext.js"
       },
