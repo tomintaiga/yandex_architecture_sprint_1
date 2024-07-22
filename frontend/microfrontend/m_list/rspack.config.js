@@ -56,7 +56,9 @@ module.exports = {
         './Card': './src/components/Card.js',
         './Main': './src/components/Main.js',
         "./ImagePopup": "./src/components/ImagePopup.js",
-        "./ImagePopupContext": "./src/contexts/ImagePopupContext.js"
+        "./ImagePopupContext": "./src/contexts/ImagePopupContext.js",
+        "./AddPlacePopup": "./src/components/AddPlacePopup.js",
+        "./AddPlacePopupContext": "./src/contexts/AddPlacePopupContext.js",
       },
       shared: {
         react: {

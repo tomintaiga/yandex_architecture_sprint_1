@@ -54,7 +54,6 @@ module.exports = {
         "register": "register@http://localhost:3032/remoteEntry.js",
         "profile": "profile@http://localhost:3034/remoteEntry.js",
         'm_list': 'm_list@http://localhost:3013/remoteEntry.js',
-        'm_popup': 'm_popup@http://localhost:3015/remoteEntry.js',
       },
       exposes: {
         './CurrentUserContext': './src/contexts/CurrentUserContext.js',
