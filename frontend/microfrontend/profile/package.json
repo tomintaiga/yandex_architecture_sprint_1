@@ -23,6 +23,7 @@
     "@rspack/dev-server": "0.7.5",
     "concurrently": "8.2.2",
     "css-loader": "7.1.2",
+    "popup": "link:../../lib/popup",
     "serve": "14.2.3"
   }
 }

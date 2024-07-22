@@ -1,5 +1,5 @@
 import React from 'react';
-import PopupWithForm from 'm_main/PopupWithForm';
+import { PopupWithForm}  from 'popup';
 import { CurrentUserContext } from 'm_main/CurrentUserContext';
 import { EditProfilePopupContext } from '../contexts/EditProfilePopupContext';
 

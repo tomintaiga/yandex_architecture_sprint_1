@@ -3,7 +3,7 @@ import { Route, useHistory, Switch } from "react-router-dom";
 import Header from "./Header";
 import Main from "m_list/Main";
 import Footer from "./Footer";
-import PopupWithForm from "./PopupWithForm";
+import { PopupWithForm } from "popup";
 import ImagePopup from "m_list/ImagePopup";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "profile/EditProfilePopup";

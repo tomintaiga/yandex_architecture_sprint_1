@@ -57,7 +57,6 @@ module.exports = {
       },
       exposes: {
         './CurrentUserContext': './src/contexts/CurrentUserContext.js',
-        './PopupWithForm': './src/components/PopupWithForm.js',
       },
       shared: {
         react: {

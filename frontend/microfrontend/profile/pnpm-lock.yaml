@@ -36,6 +36,9 @@ importers:
       css-loader:
         specifier: 7.1.2
         version: 7.1.2(@rspack/core@0.7.5)(webpack@5.93.0)
+      popup:
+        specifier: link:../../lib/popup
+        version: link:../../lib/popup
       serve:
         specifier: 14.2.3
         version: 14.2.3
