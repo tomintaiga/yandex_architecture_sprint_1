@@ -1,0 +1,21 @@
+{
+  "name": "popup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/popup.js",
+  "module": "src/index.js",
+  "scripts": {
+    "build": "rspack build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rspack/cli": "0.7.5",
+    "@rspack/core": "0.7.5",
+    "babel-loader": "9.1.3"
+  },
+  "dependencies": {
+    "react": "17.0.2"
+  }
+}

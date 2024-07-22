@@ -1,7 +1,6 @@
 import React from 'react';
-import PopupWithForm from './PopupWithForm';
+import { PopupWithForm} from "popup";
 import { AddPlacePopupContext } from "../contexts/AddPlacePopupContext";
-import "../index.css";
 
 function AddPlacePopup({ onAddPlace, onClose }) {
   const [name, setName] = React.useState('');

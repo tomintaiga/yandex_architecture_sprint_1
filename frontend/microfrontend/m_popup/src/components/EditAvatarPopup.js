@@ -1,7 +1,6 @@
 import React from 'react';
-import PopupWithForm from './PopupWithForm';
+import { PopupWithForm} from "popup";
 import { EditAvatarPopupContext } from '../contexts/EditAvatarPopupContext';
-import "../index.css";
 
 function EditAvatarPopup({ onUpdateAvatar, onClose }) {
   const inputRef = React.useRef();

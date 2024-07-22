@@ -1,8 +1,6 @@
 import React from 'react';
 import SuccessIcon from '../images/success-icon.svg';
 import ErrorIcon from '../images/error-icon.svg';
-import "../index.css";
-import "../blocks/popup/_is-opened/popup_is-opened.css";
 import { InfoTooltipContext } from '../contexts/InfoTooltipContext';
 
 function InfoTooltip({ onClose, status }) {

@@ -57,7 +57,6 @@ module.exports = {
         "./EditProfilePopup": "./src/components/EditProfilePopup.js",
         "./ImagePopup": "./src/components/ImagePopup.js",
         "./InfoTooltip": "./src/components/InfoTooltip.js",
-        "./PopupWithForm": "./src/components/PopupWithForm.js",
         "./AddPlacePopupContext": "./src/contexts/AddPlacePopupContext.js",
         "./EditAvatarPopupContext": "./src/contexts/EditAvatarPopupContext.js",
         "./EditProfilePopupContext": "./src/contexts/EditProfilePopupContext.js",

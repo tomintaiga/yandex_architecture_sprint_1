@@ -1,7 +1,5 @@
 import React from 'react';
 import { ImagePopupContext } from "../contexts/ImagePopupContext";
-import "../index.css";
-import "../blocks/popup/_is-opened/popup_is-opened.css";
 
 function ImagePopup({ onClose }) {
 

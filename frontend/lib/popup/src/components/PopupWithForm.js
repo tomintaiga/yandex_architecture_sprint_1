@@ -1,6 +1,5 @@
 import React from 'react';
 import "../index.css";
-import "../blocks/popup/_is-opened/popup_is-opened.css";
 
 function PopupWithForm({
   title,
