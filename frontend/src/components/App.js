@@ -4,7 +4,7 @@ import Header from "./Header";
 import Main from "m_list/Main";
 import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
-import ImagePopup from "m_popup/ImagePopup";
+import ImagePopup from "m_list/ImagePopup";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "profile/EditProfilePopup";
 import EditAvatarPopup from "profile/EditAvatarPopup";
@@ -18,7 +18,7 @@ import * as auth from "auth";
 import { AddPlacePopupContext } from "m_popup/AddPlacePopupContext";
 import { EditAvatarPopupContext } from "profile/EditAvatarPopupContext";
 import { EditProfilePopupContext } from "profile/EditProfilePopupContext";
-import { ImagePopupContext } from "m_popup/ImagePopupContext";
+import { ImagePopupContext } from "m_list/ImagePopupContext";
 import { InfoTooltipContext } from "../contexts/InfoTooltipContext";
 
 

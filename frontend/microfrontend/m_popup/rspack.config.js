@@ -53,9 +53,7 @@ module.exports = {
       },
       exposes: {
         "./AddPlacePopup": "./src/components/AddPlacePopup.js",
-        "./ImagePopup": "./src/components/ImagePopup.js",
         "./AddPlacePopupContext": "./src/contexts/AddPlacePopupContext.js",
-        "./ImagePopupContext": "./src/contexts/ImagePopupContext.js"
       },
       shared: {
         react: {

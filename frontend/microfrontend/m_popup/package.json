@@ -4,10 +4,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "rspack build --config rspack.config.js",
-    "legacy:build": "webpack --config webpack.config.js --stats=minimal",
     "serve": "serve dist -p 3015",
-    "start": "concurrently \"npm run build\" \"npm run serve\"",
-    "legacy:start": "concurrently \"npm run legacy:build\" \"npm run serve\""
+    "start": "concurrently \"npm run build\" \"npm run serve\""
   },
   "dependencies": {
     "popup": "link:../../lib/popup",

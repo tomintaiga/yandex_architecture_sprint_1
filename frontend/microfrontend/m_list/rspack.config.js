@@ -55,6 +55,8 @@ module.exports = {
       exposes: {
         './Card': './src/components/Card.js',
         './Main': './src/components/Main.js',
+        "./ImagePopup": "./src/components/ImagePopup.js",
+        "./ImagePopupContext": "./src/contexts/ImagePopupContext.js"
       },
       shared: {
         react: {
