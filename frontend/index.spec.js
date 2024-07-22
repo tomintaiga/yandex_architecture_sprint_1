@@ -23,7 +23,7 @@ describe('Сборка проекта', () => {
 });
 
 describe('Запуск проекта', () => {
-  jest.setTimeout(30000);
+  jest.setTimeout(60000);
   let page;
   let browser;
   let yarnProcess;

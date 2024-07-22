@@ -1,0 +1,29 @@
+{
+  "name": "profile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rspack build --config rspack.config.js",
+    "serve": "serve dist -p 3034",
+    "start": "concurrently \"npm run build\" \"npm run serve\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "5.2.0",
+    "react-singleton-context": "1.0.5"
+  },
+  "devDependencies": {
+    "@rspack/cli": "0.7.5",
+    "@rspack/core": "0.7.5",
+    "@rspack/dev-server": "0.7.5",
+    "concurrently": "8.2.2",
+    "css-loader": "7.1.2",
+    "popup": "link:../../lib/popup",
+    "serve": "14.2.3"
+  }
+}

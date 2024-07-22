@@ -1,20 +1,29 @@
 import React from 'react';
 import SuccessIcon from '../images/success-icon.svg';
 import ErrorIcon from '../images/error-icon.svg';
+import "../index.css";
+import "../blocks/popup/_is-opened/popup_is-opened.css";
+import { InfoTooltipContext } from '../contexts/InfoTooltipContext';
 
-function InfoTooltip({ isOpen, onClose, status }) {
+function InfoTooltip({ onClose, status }) {
+  const isOpen = React.useContext(InfoTooltipContext);
+
+  React.useEffect(() => {
+    console.log("InfoTooltip visible?", isOpen)
+  }, [isOpen]);
+
   const icon = status === 'success' ? SuccessIcon : ErrorIcon
-  const text = status === 'success' ? "Вы успешно зарегистрировались" : 
-     "Что-то пошло не так! Попробуйте ещё раз."
+  const text = status === 'success' ? "Вы успешно зарегистрировались" :
+    "Что-то пошло не так! Попробуйте ещё раз."
   return (
     <div className={`popup ${isOpen && 'popup_is-opened'}`}>
       <div className="popup__content">
         <form className="popup__form" noValidate>
           <button type="button" className="popup__close" onClick={onClose}></button>
-            <div>
-              <img className="popup__icon" src={icon} alt=""/>
-              <p className="popup__status-message">{text}</p>
-            </div>
+          <div>
+            <img className="popup__icon" src={icon} alt="" />
+            <p className="popup__status-message">{text}</p>
+          </div>
         </form>
       </div>
     </div>
@@ -23,4 +32,3 @@ function InfoTooltip({ isOpen, onClose, status }) {
 
 export default InfoTooltip;
 
- 

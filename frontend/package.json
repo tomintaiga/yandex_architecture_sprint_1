@@ -1,23 +1,44 @@
 {
-  "name": "web_canonicals_ru",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
-  },
+  "name": "m_main",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
-    "test": "react-scripts test",
+    "build": "concurrently \"rspack build --config rspack.config.js\" \"cd lib/api && npm run build\" \"cd lib/auth && npm run build\" \"cd lib/popup && npm run build\" \"cd microfrontend/m_list && rspack build --config rspack.config.js\" \"cd microfrontend/register && rspack build\" \"cd microfrontend/login && npm run build\" \"cd microfrontend/profile && npm run build\"",
+    "serve": "serve dist -p 3000",
+    "start": "concurrently \"npm run serve\" \"cd microfrontend/m_list && npm run serve\" \"cd microfrontend/register && npm run serve\" \"cd microfrontend/login && npm run serve\" \"cd microfrontend/profile && npm run serve\"",
     "test:microfrontend": "npx jest ./index.spec.js",
-    "eject": "react-scripts eject"
+    "test": "npm test"
+  },
+  "dependencies": {
+    "api": "link:lib/api",
+    "auth": "link:lib/auth",
+    "popup": "link:lib/popup",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "^5.2.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "7.24.7",
+    "@babel/preset-react": "7.24.7",
+    "@module-federation/enhanced": "0.2.5",
+    "@playwright/test": "^1.45.0",
+    "@rspack/cli": "0.7.5",
+    "@rspack/core": "0.7.5",
+    "@rspack/dev-server": "0.7.5",
+    "@types/node": "^20.14.9",
+    "babel-loader": "9.1.3",
+    "concurrently": "^8.2.2",
+    "css-loader": "7.1.2",
+    "dotenv": "^16.0.2",
+    "html-webpack-plugin": "5.6.0",
+    "react-singleton-context": "^1.0.5",
+    "serve": "14.2.3",
+    "wait-port": "^1.1.0",
+    "webpack": "5.92.1",
+    "webpack-cli": "5.1.4"
   },
   "eslintConfig": {
     "extends": [
@@ -37,10 +58,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@playwright/test": "^1.45.0",
-    "@types/node": "^20.14.9",
-    "dotenv": "^16.0.2",
-    "wait-port": "^1.1.0"
-  }
+  "description": ""
 }

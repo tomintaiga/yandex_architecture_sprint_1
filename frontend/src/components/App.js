@@ -1,20 +1,26 @@
-import React from "react";
+import React from 'react';
 import { Route, useHistory, Switch } from "react-router-dom";
 import Header from "./Header";
-import Main from "./Main";
+import Main from "m_list/Main";
 import Footer from "./Footer";
-import PopupWithForm from "./PopupWithForm";
-import ImagePopup from "./ImagePopup";
-import api from "../utils/api";
+import { PopupWithForm } from "popup";
+import ImagePopup from "m_list/ImagePopup";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import EditProfilePopup from "./EditProfilePopup";
-import EditAvatarPopup from "./EditAvatarPopup";
-import AddPlacePopup from "./AddPlacePopup";
-import Register from "./Register";
-import Login from "./Login";
+import EditProfilePopup from "profile/EditProfilePopup";
+import EditAvatarPopup from "profile/EditAvatarPopup";
+import AddPlacePopup from "m_list/AddPlacePopup";
+import Register from "register/Register";
+import Login from "login/Login";
 import InfoTooltip from "./InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
-import * as auth from "../utils/auth.js";
+import api from "api";
+import * as auth from "auth";
+import { AddPlacePopupContext } from "m_list/AddPlacePopupContext";
+import { EditAvatarPopupContext } from "profile/EditAvatarPopupContext";
+import { EditProfilePopupContext } from "profile/EditProfilePopupContext";
+import { ImagePopupContext } from "m_list/ImagePopupContext";
+import { InfoTooltipContext } from "../contexts/InfoTooltipContext";
+
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] =
@@ -68,14 +74,17 @@ function App() {
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
+    console.log("Popup: open edit profile");
   }
 
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true);
+    console.log("Popup: open add place");
   }
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
+    console.log("Popup: open edit avatar");
   }
 
   function closeAllPopups() {
@@ -84,10 +93,12 @@ function App() {
     setIsEditAvatarPopupOpen(false);
     setIsInfoToolTipOpen(false);
     setSelectedCard(null);
+    console.log("Popup: close all popup");
   }
 
   function handleCardClick(card) {
     setSelectedCard(card);
+    console.log("Popup: select card", card);
   }
 
   function handleUpdateUser(userUpdate) {
@@ -152,6 +163,8 @@ function App() {
       .catch((err) => {
         setTooltipStatus("fail");
         setIsInfoToolTipOpen(true);
+        // TODO: Need to show user some errors
+        console.log("Can't register: ", err);
       });
   }
 
@@ -166,6 +179,8 @@ function App() {
       .catch((err) => {
         setTooltipStatus("fail");
         setIsInfoToolTipOpen(true);
+        // TODO: Need to show user some errors
+        console.log("Can't login: ", err)
       });
   }
 
@@ -206,28 +221,34 @@ function App() {
           </Route>
         </Switch>
         <Footer />
-        <EditProfilePopup
-          isOpen={isEditProfilePopupOpen}
-          onUpdateUser={handleUpdateUser}
-          onClose={closeAllPopups}
-        />
-        <AddPlacePopup
-          isOpen={isAddPlacePopupOpen}
-          onAddPlace={handleAddPlaceSubmit}
-          onClose={closeAllPopups}
-        />
+        <EditProfilePopupContext.Provider value={isEditProfilePopupOpen}>
+          <EditProfilePopup
+            onUpdateUser={handleUpdateUser}
+            onClose={closeAllPopups}
+          />
+        </EditProfilePopupContext.Provider>
+        <AddPlacePopupContext.Provider value={isAddPlacePopupOpen}>
+          <AddPlacePopup
+            onAddPlace={handleAddPlaceSubmit}
+            onClose={closeAllPopups}
+          />
+        </AddPlacePopupContext.Provider>
         <PopupWithForm title="Вы уверены?" name="remove-card" buttonText="Да" />
-        <EditAvatarPopup
-          isOpen={isEditAvatarPopupOpen}
-          onUpdateAvatar={handleUpdateAvatar}
-          onClose={closeAllPopups}
-        />
-        <ImagePopup card={selectedCard} onClose={closeAllPopups} />
-        <InfoTooltip
-          isOpen={isInfoToolTipOpen}
-          onClose={closeAllPopups}
-          status={tooltipStatus}
-        />
+        <EditAvatarPopupContext.Provider value={isEditAvatarPopupOpen}>
+          <EditAvatarPopup
+            onUpdateAvatar={handleUpdateAvatar}
+            onClose={closeAllPopups}
+          />
+        </EditAvatarPopupContext.Provider>
+        <ImagePopupContext.Provider value={selectedCard}>
+          <ImagePopup onClose={closeAllPopups} />
+        </ImagePopupContext.Provider>
+        <InfoTooltipContext.Provider value={isInfoToolTipOpen}>
+          <InfoTooltip
+            onClose={closeAllPopups}
+            status={tooltipStatus}
+          />
+        </InfoTooltipContext.Provider>
       </div>
     </CurrentUserContext.Provider>
   );
